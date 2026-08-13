@@ -27,7 +27,7 @@
 <div id="meta">Pick an airline, get its Cost Index values per aircraft. Source: <a href="data/cost_indexes.csv">cost_indexes.csv</a></div>
 <select id="airline"><option value="">Select an airline…</option></select>
 <div id="empty">No data for this airline.</div>
-<table id="results"><thead><tr><th>Aircraft</th><th>CI</th><th>Notes</th><th>Source</th></tr></thead><tbody></tbody></table>
+<table id="results"><thead><tr><th>Aircraft</th><th>CI</th></tr></thead><tbody></tbody></table>
 
 <script>
 async function main() {
@@ -55,7 +55,7 @@ async function main() {
     empty.style.display = select.value && !matches.length ? 'block' : 'none';
     matches.forEach(r => {
       const tr = document.createElement('tr');
-      for (const val of [r.aircraft, r.cost_index, r.notes || '', r.source]) {
+      for (const val of [r.aircraft, r.cost_index]) {
         const td = document.createElement('td');
         td.textContent = val;
         tr.appendChild(td);

@@ -1,7 +1,7 @@
 airline,code,aircraft,cost_index,notes,source
 Aegean Airlines,-,A319/A320,20,,toga_pdf
 Aegean Airlines,A3/AEE,A320,20,,fandom
-Aegean Airlines,A3/AEE,A321,25,,fandom+toga_pdf
+Aegean Airlines,A3/AEE,A321,25,,toga_pdf+fandom
 Aer Lingus,-,A319,5,retired,toga_pdf
 Aer Lingus,-,A320,4,,toga_pdf
 Aer Lingus,-,A321,6,,toga_pdf
@@ -11,7 +11,7 @@ Aer Lingus,-,B757,11,,toga_pdf
 Aeroflot,SU/AFL,A32X,10-20,,toga_pdf
 Aeroflot,SU/AFL,B763,60,,toga_pdf
 Aerolineas Argentinas,AR/ARG,A332,30,,fandom
-Aerolineas Argentinas,AR/ARG,B737,25,,fandom+toga_pdf
+Aerolineas Argentinas,AR/ARG,B737,25,,toga_pdf+fandom
 Aerolineas Argentinas,AR/ARG,B737,25,15 when flying EZE-BOG/BOG-EZE,fandom
 Aerolineas Argentinas,AR/ARG,B738/B38M,20,,fandom
 Aerologic,-,B77F,170,,toga_pdf
@@ -32,12 +32,11 @@ Air Berlin,-,A321,7,NLY OE-XXX,toga_pdf
 Air Berlin,-,A321,8,BER D-XXXX,toga_pdf
 Air Berlin,AB/BER,A321/BER,8,D-xxxx registered planes,fandom
 Air Berlin,AB/BER,A321/NLY,7,OE-xxx registered planes,fandom
-Air Berlin,AB/BER,A330-200,80,,fandom
-Air Berlin,-,A332,80,,toga_pdf
+Air Berlin,AB/BER,A332,80,,toga_pdf+fandom
 Air Berlin,AB/BER,all,30,legacy page value,fandom
 Air Berlin,-,B737 NG,8,,toga_pdf
-Air Berlin,AB/BER,B737-700,8,,fandom
-Air Berlin,AB/BER,B737-800,8,,fandom
+Air Berlin,AB/BER,B737,8,,fandom
+Air Berlin,AB/BER,B738,8,,fandom
 Air Canada,AC/ACA,B767,100,,toga_pdf
 Air France,AF/AFR,A320 domestic,0/17,climb/cruise,fandom
 Air France,AF/AFR,delayed longhaul,135,,fandom
@@ -57,26 +56,26 @@ American Airlines,-,A32X,27,<4hr flight,toga_pdf
 American Airlines,-,A32X,22,>4hr flight,toga_pdf
 American Airlines,-,B737,35,<4hr flight,toga_pdf
 American Airlines,-,B737,30,>4hr flight,toga_pdf
-American Airlines,AA/AAL,B737-800W,35,>4hr flight,fandom
-American Airlines,AA/AAL,B737-800W,30,<4hr flight,fandom
+American Airlines,AA/AAL,B738,35,>4hr flight,fandom
+American Airlines,AA/AAL,B738,30,<4hr flight,fandom
 American Airlines,-,B757,80,<4hr flight,toga_pdf
 American Airlines,-,B757,75,>4hr flight,toga_pdf
 American Airlines,AA/AAL,B757-200W,80,>4hr flight,fandom
 American Airlines,AA/AAL,B757-200W,75,<4hr flight,fandom
 American Airlines,-,B767,65,<4hr flight,toga_pdf
 American Airlines,-,B767,60,>4hr flight,toga_pdf
-American Airlines,AA/AAL,B767-300ER,65,>4hr flight,fandom
-American Airlines,AA/AAL,B767-300ER,60,<4hr flight,fandom
+American Airlines,AA/AAL,B763,65,>4hr flight,fandom
+American Airlines,AA/AAL,B763,60,<4hr flight,fandom
 American Airlines,-,B772,85,<4hr flight,toga_pdf
 American Airlines,-,B772,80,>4hr flight,toga_pdf
-American Airlines,AA/AAL,B777-200ER,85,>4hr flight,fandom
-American Airlines,AA/AAL,B777-200ER,80,<4hr flight,fandom
-American Airlines,AA/AAL,B777-300ER,90,>4hr flight,fandom
-American Airlines,AA/AAL,B777-300ER,85,<4hr flight,fandom
+American Airlines,AA/AAL,B772,85,>4hr flight,fandom
+American Airlines,AA/AAL,B772,80,<4hr flight,fandom
+American Airlines,AA/AAL,B77W,90,>4hr flight,fandom
+American Airlines,AA/AAL,B77W,85,<4hr flight,fandom
 American Airlines,-,B77W,90,<4hr flight,toga_pdf
 American Airlines,-,B77W,85,>4hr flight,toga_pdf
-American Airlines,AA/AAL,MD-80,24,>4hr flight,fandom
-American Airlines,AA/AAL,MD-80,21,<4hr flight,fandom
+American Airlines,AA/AAL,MD80,24,>4hr flight,fandom
+American Airlines,AA/AAL,MD80,21,<4hr flight,fandom
 American Airlines,-,MD80,24,<4hr flight,toga_pdf
 American Airlines,-,MD80,21,>4hr flight,toga_pdf
 ASL Airlines Belgium,-,B737 NG & CL,10,,toga_pdf
@@ -108,10 +107,10 @@ Cathay Pacific,-,B744,80,,toga_pdf
 Cebu Pacific,-,A32X,10,,toga_pdf
 Cebu Pacific,-,General,5,,toga_pdf
 China Airlines,-,B744,85,,toga_pdf
-Condor,DE/CFG,A320,26,,fandom+toga_pdf
-Condor,DE/CFG,A321,33,,fandom+toga_pdf
+Condor,DE/CFG,A320,26,,toga_pdf+fandom
+Condor,DE/CFG,A321,33,,toga_pdf+fandom
 Condor,-,B752,18,,toga_pdf
-Condor,DE/CFG,B753,30,,fandom+toga_pdf
+Condor,DE/CFG,B753,30,,toga_pdf+fandom
 Condor,DE/CFG,B763,30,,fandom
 Condor,-,B767,30,,toga_pdf
 Delta Airlines,-,B737,13,,toga_pdf
@@ -134,16 +133,14 @@ EasyJet,U2/EZY/EZS,A319/A320/A320SL,12,fandom wiki page value,fandom
 EasyJet,U2/EZY,A320,9,legacy page value,fandom
 EasyJet,U2/EZY,A321,9,legacy page value,fandom
 EasyJet,-,A321,23,,toga_pdf
-Egyptair,MS/MSR,A320,23,,fandom+toga_pdf
-Egyptair,MS/MSR,A321,25,,fandom+toga_pdf
+Egyptair,MS/MSR,A320,23,,toga_pdf+fandom
+Egyptair,MS/MSR,A321,25,,toga_pdf+fandom
 Egyptair,MS/MSR,A330-200/300,35,,fandom
 Egyptair,-,A330,35,,toga_pdf
-Egyptair,-,B735,18,,toga_pdf
-Egyptair,MS/MSR,B737-500,18,,fandom
-Egyptair,MS/MSR,B737-800,22,,fandom
-Egyptair,-,B738,22,,toga_pdf
-Egyptair,MS/MSR,B772,37,,fandom+toga_pdf
-Egyptair,MS/MSR,B77W,44,,fandom+toga_pdf
+Egyptair,MS/MSR,B735,18,,toga_pdf+fandom
+Egyptair,MS/MSR,B738,22,,toga_pdf+fandom
+Egyptair,MS/MSR,B772,37,,toga_pdf+fandom
+Egyptair,MS/MSR,B77W,44,,toga_pdf+fandom
 El Al,-,B737,15-30,,toga_pdf
 El Al,-,B747,39,,toga_pdf
 El Al,-,B757,20-40,,toga_pdf
@@ -151,20 +148,18 @@ El Al,-,B762,30-45,Europe,toga_pdf
 El Al,-,B762,40-45,Other,toga_pdf
 El Al,-,B777,71,,toga_pdf
 Emirates,-,A330,26,,toga_pdf
-Emirates,EK/UAE,A330-200,26,,fandom
-Emirates,EK/UAE,A340-300,24,,fandom
-Emirates,EK/UAE,A340-500,28,,fandom
-Emirates,-,A343,24,,toga_pdf
-Emirates,-,A345,28,,toga_pdf
+Emirates,EK/UAE,A332,26,,fandom
+Emirates,EK/UAE,A343,24,,toga_pdf+fandom
+Emirates,EK/UAE,A345,28,,toga_pdf+fandom
 Emirates,-,A380,50,,toga_pdf
-Emirates,EK/UAE,A380-800,50,,fandom
+Emirates,EK/UAE,A388,50,,fandom
 Emirates,-,B772ER,36,34 if special reg & shorthaul reg A6-EMI/EMH/EML/EMK/EMJ,toga_pdf
 Emirates,-,B772LR/LRF,35,,toga_pdf
-Emirates,EK/UAE,B777-200,34,short haul only; ICAO B772 reg A6EMI/EMH/EML/EMK/EMJ,fandom
-Emirates,EK/UAE,B777-200ER,36,,fandom
-Emirates,EK/UAE,B777-200LR/F,35,,fandom
-Emirates,EK/UAE,B777-300ER,36,,fandom
-Emirates,EK/UAE,B777-300ERD,37,ICAO B773D reg A6EMN/EMM/EMO/EMP/EMR/EMS/EMT/EMU/EMV/EMX/EMW,fandom
+Emirates,EK/UAE,B772,34,short haul only; ICAO B772 reg A6EMI/EMH/EML/EMK/EMJ,fandom
+Emirates,EK/UAE,B772,36,,fandom
+Emirates,EK/UAE,B77L/F,35,,fandom
+Emirates,EK/UAE,B77W,36,,fandom
+Emirates,EK/UAE,B77WD,37,ICAO B773D reg A6EMN/EMM/EMO/EMP/EMR/EMS/EMT/EMU/EMV/EMX/EMW,fandom
 Emirates,-,B77W,36,37 if 777-300ERD reg A6-EMN/EMM/EMO/EMP/EMR/EMS/EMT/EMU/EMV/EMX/EMW,toga_pdf
 Etihad,-,A319,18,,toga_pdf
 Etihad,-,A320,16,no sharklets,toga_pdf
@@ -242,28 +237,28 @@ Lufthansa,-,A32X,30,,toga_pdf
 Lufthansa,-,A330 & A340,70-90,,toga_pdf
 Lufthansa,-,A380,60,,toga_pdf
 Lufthansa,LH/DLH,Airbus (general),25,,fandom
-Lufthansa,LH/DLH,B737-300,25,,fandom
+Lufthansa,LH/DLH,B733,25,,fandom
 Lufthansa,-,B744 & B748,70,,toga_pdf
 Lufthansa,LH/DLH,B747-400,70,,fandom
 Lufthansa Cargo,LH/GEC,all,80,,fandom
 Lufthansa Cargo,-,B772LRF,80,,toga_pdf
 Lufthansa Cargo,-,General,50,,toga_pdf
 Lufthansa Cargo,-,MD11,30,,toga_pdf
-Luxair,LG/LGL,B737,10,,fandom+toga_pdf
-Luxair,LG/LGL,B738,8,,fandom+toga_pdf
+Luxair,LG/LGL,B737,10,,toga_pdf+fandom
+Luxair,LG/LGL,B738,8,,toga_pdf+fandom
 Nordavia,-,B735,27,,toga_pdf
 Nordstar Airlines,-,B737,30,,toga_pdf
 Norwegian Air Shuttle,-,B737 CL,20,,toga_pdf
 Norwegian Air Shuttle,-,B737 NG,15,standard ops,toga_pdf
 Norwegian Air Shuttle,-,B737 NG,40,express ops (HEL/LGW/SXF/VIE/ORY/DUS + domestic Finland),toga_pdf
 Norwegian Air Shuttle,-,B737 NG,80,delayed ops (HRG/RMF/LPA/TFS),toga_pdf
-Norwegian Air Shuttle,DY/NAX,B737-300,30,,fandom
-Norwegian Air Shuttle,DY/NAX,B737-800,15,80 delay only,fandom
+Norwegian Air Shuttle,DY/NAX,B733,30,,fandom
+Norwegian Air Shuttle,DY/NAX,B738,15,80 delay only,fandom
 Norwegian Air Shuttle,-,B787,36,,toga_pdf
-Norwegian Air Shuttle,DY/NAX,B787-8,36,,fandom
+Norwegian Air Shuttle,DY/NAX,B788,36,,fandom
 Nouvelair,-,A320,28,,toga_pdf
 Nouvelair Tunisie,BJ/LBT,A320,38,,fandom
-Novair,1I/NVR,A321,4,,fandom+toga_pdf
+Novair,1I/NVR,A321,4,,toga_pdf+fandom
 PAL,-,B77W,0,climb & descent,toga_pdf
 PAL,-,B77W,100,cruise,toga_pdf
 PIA,-,B777,180,climb & descent,toga_pdf
@@ -274,28 +269,25 @@ Qantas,-,General,20,international; up to CI 250 to meet schedule/duty limits,tog
 Qatar Airways,QR/QTR,A319CJ,9/8,9 outbound DOH / 8 inbound DOH,fandom
 Qatar Airways,-,A319CJ,9,from OTHH,toga_pdf
 Qatar Airways,-,A319CJ,8,to OTHH,toga_pdf
-Qatar Airways,QR/QTR,A320,10,,fandom+toga_pdf
-Qatar Airways,QR/QTR,A321,11,,fandom+toga_pdf
-Qatar Airways,QR/QTR,A330-200,15,,fandom
+Qatar Airways,QR/QTR,A320,10,,toga_pdf+fandom
+Qatar Airways,QR/QTR,A321,11,,toga_pdf+fandom
+Qatar Airways,QR/QTR,A332,15,,fandom
 Qatar Airways,QR/QTR,A330-200F,15,,fandom
-Qatar Airways,QR/QTR,A330-300,15,,fandom
+Qatar Airways,QR/QTR,A333,15,,toga_pdf+fandom
 Qatar Airways,-,A332/F,15,,toga_pdf
-Qatar Airways,-,A333,15,,toga_pdf
-Qatar Airways,QR/QTR,A340-600,21,,fandom
-Qatar Airways,-,A346,21,,toga_pdf
+Qatar Airways,QR/QTR,A346,21,,toga_pdf+fandom
 Qatar Airways,-,A350,30,,toga_pdf
-Qatar Airways,QR/QTR,A350-900,30,,fandom
+Qatar Airways,QR/QTR,A359,30,,fandom
 Qatar Airways,-,A380,160,,toga_pdf
-Qatar Airways,QR/QTR,A380-800,160,,fandom
+Qatar Airways,QR/QTR,A388,160,,fandom
 Qatar Airways,-,B772LR/LRF,120,from OTHH,toga_pdf
 Qatar Airways,-,B772LR/LRF,110,to OTHH,toga_pdf
-Qatar Airways,QR/QTR,B777-200LR,120/110,120 outbound DOH / 110 inbound DOH,fandom
-Qatar Airways,QR/QTR,B777-200LRF,120,,fandom
-Qatar Airways,QR/QTR,B777-300ER,120,,fandom
-Qatar Airways,-,B77W,120,,toga_pdf
+Qatar Airways,QR/QTR,B77L,120/110,120 outbound DOH / 110 inbound DOH,fandom
+Qatar Airways,QR/QTR,B77LF,120,,fandom
+Qatar Airways,QR/QTR,B77W,120,,toga_pdf+fandom
 Qatar Airways,-,B787,110,from OTHH,toga_pdf
 Qatar Airways,-,B787,25,to OTHH,toga_pdf
-Qatar Airways,QR/QTR,B787-800,110/25,110 outbound DOH / 25 inbound DOH,fandom
+Qatar Airways,QR/QTR,B788,110/25,110 outbound DOH / 25 inbound DOH,fandom
 Royal Air Maroc,-,B737,34,,toga_pdf
 Royal Air Maroc,AT/RAM,B738,29,,fandom
 Royal Air Maroc,-,B738,24,50 to/from LHR/ORY/AMS,toga_pdf
@@ -325,7 +317,7 @@ South African Airways,-,General,50,,toga_pdf
 Southwest Airlines,-,B737 CL,28-30,,toga_pdf
 Southwest Airlines,WN/SWA,B737 MAX,30,all revenue flights,fandom
 Southwest Airlines,-,B737 NG,36-40,,toga_pdf
-Southwest Airlines,WN/SWA,B737NG,40,all revenue flights; 2024/2025 real-world OPS,fandom
+Southwest Airlines,WN/SWA,B737 NG,40,all revenue flights; 2024/2025 real-world OPS,fandom
 SunExpress,-,General,2-4,,toga_pdf
 Swiss Airlines,-,A32X,10,<= FL290,toga_pdf
 Swiss Airlines,-,A32X,20,> FL290,toga_pdf
@@ -337,12 +329,12 @@ Swiss International Air Lines,LX/SWR,A32S,20,above FL290,fandom
 Swiss International Air Lines,LX/SWR,A330-200/A340-300,30,M.082 cruise CI 30 climb/descend/cruise to FL280,fandom
 Swiss International Air Lines,LX/SWR,A330-200/A340-300,150,M.083 cruise CI 150 climb/descend/cruise to FL290,fandom
 Swiss International Air Lines,LX/SWR,A330-200/A340-300 LRC,30,,fandom
-TAM Linhas Aereas,JJ/TAM,A319,19,,fandom+toga_pdf
-TAM Linhas Aereas,JJ/TAM,A320,26,,fandom+toga_pdf
-TAM Linhas Aereas,JJ/TAM,A321,25,,fandom+toga_pdf
-TAM Linhas Aereas,JJ/TAM,A332,26,,fandom+toga_pdf
-TAM Linhas Aereas,JJ/TAM,B763,34,,fandom+toga_pdf
-TAM Linhas Aereas,JJ/TAM,B77W,38,,fandom+toga_pdf
+TAM Linhas Aereas,JJ/TAM,A319,19,,toga_pdf+fandom
+TAM Linhas Aereas,JJ/TAM,A320,26,,toga_pdf+fandom
+TAM Linhas Aereas,JJ/TAM,A321,25,,toga_pdf+fandom
+TAM Linhas Aereas,JJ/TAM,A332,26,,toga_pdf+fandom
+TAM Linhas Aereas,JJ/TAM,B763,34,,toga_pdf+fandom
+TAM Linhas Aereas,JJ/TAM,B77W,38,,toga_pdf+fandom
 Thomas Cook Airlines Belgium,HQ/TCW,A320,10,,fandom
 Thomas Cook Airlines Scandinavia,DK/VKG,A321,21,,fandom
 Thomas Cook Airlines Scandinavia,DK/VKG,A332,40,,fandom
@@ -363,11 +355,11 @@ Thomas Cook UK,-,B753,29,,toga_pdf
 Thomas Cook UK,-,B763,27,,toga_pdf
 Thomson Airways,BY/TOM,A320,13,,fandom
 Thomson Airways,BY/TOM,A321,17,,fandom
-Thomson Airways,BY/TOM,B737-300,10,,fandom
-Thomson Airways,BY/TOM,B737-800,9,,fandom
+Thomson Airways,BY/TOM,B733,10,,fandom
+Thomson Airways,BY/TOM,B738,9,,fandom
 Thomson Airways,BY/TOM,B757-200,10,,fandom
-Thomson Airways,BY/TOM,B767-300 long haul,19,,fandom
-Thomson Airways,BY/TOM,B767-300 short haul,11,,fandom
+Thomson Airways,BY/TOM,B763 long haul,19,,fandom
+Thomson Airways,BY/TOM,B763 short haul,11,,fandom
 Transavia,-,B737,36,standard ops,toga_pdf
 Transavia,-,B737,300-350,delayed ops,toga_pdf
 Tui,-,General,15,,toga_pdf
@@ -383,11 +375,11 @@ Tui UK (Thomson Airways),-,B738,13,,toga_pdf
 Tui UK (Thomson Airways),-,B752,23,,toga_pdf
 Tui UK (Thomson Airways),-,B763,25,,toga_pdf
 Tui UK (Thomson Airways),-,B787,21,19 long haul / 11 short haul variants,toga_pdf
-Tunisair,TU/TAR,A320,17,,fandom+toga_pdf
-Tunisair,TU/TAR,B736,13,,fandom+toga_pdf
+Tunisair,TU/TAR,A320,17,,toga_pdf+fandom
+Tunisair,TU/TAR,B736,13,,toga_pdf+fandom
 Turkish Airlines,-,B77W,26,,toga_pdf
 Ukraine International,-,B737 NG & CL,11-14,,toga_pdf
-Ukraine International Airlines,PS/AUI,B737NG,17-27,CI 100 morning flights from Kazakhstan,fandom
+Ukraine International Airlines,PS/AUI,B737 NG,17-27,CI 100 morning flights from Kazakhstan,fandom
 Ukraine International Airlines,PS/AUI,B767,50-60,,fandom
 Ukraine International Airlines,PS/AUI,B777,140,,fandom
 Ukraine International Airlines,PS/AUI,E190,20-30,,fandom
@@ -397,8 +389,8 @@ United Airlines,-,A32X,27,<4hr flight,toga_pdf
 United Airlines,-,A32X,22,>4hr flight,toga_pdf
 United Airlines,-,B737 NG & CL,35,<4hr flight,toga_pdf
 United Airlines,-,B737 NG & CL,30,>4hr flight,toga_pdf
-United Airlines,UA/UAL,B737-300/500,45,<4hr flight,fandom
-United Airlines,UA/UAL,B737-300/500,30,>4hr flight,fandom
+United Airlines,UA/UAL,B733/B735,45,<4hr flight,fandom
+United Airlines,UA/UAL,B733/B735,30,>4hr flight,fandom
 United Airlines,-,B744,90,<4hr flight,toga_pdf
 United Airlines,-,B744,85,>4hr flight,toga_pdf
 United Airlines,UA/UAL,B747-400,90,<4hr flight,fandom
@@ -407,30 +399,24 @@ United Airlines,-,B752,80,<4hr flight,toga_pdf
 United Airlines,-,B752,75,>4hr flight,toga_pdf
 United Airlines,UA/UAL,B757-200,80,<4hr flight,fandom
 United Airlines,UA/UAL,B757-200,75,>4hr flight,fandom
-United Airlines,-,B763,65,<4hr flight,toga_pdf
-United Airlines,-,B763,60,>4hr flight,toga_pdf
-United Airlines,UA/UAL,B767-300,65,<4hr flight,fandom
-United Airlines,UA/UAL,B767-300,60,>4hr flight,fandom
-United Airlines,-,B772,85,<4hr flight,toga_pdf
-United Airlines,-,B772,80,>4hr flight,toga_pdf
-United Airlines,UA/UAL,B777-200,85,<4hr flight,fandom
-United Airlines,UA/UAL,B777-200,80,>4hr flight,fandom
-UPS,-,MD-11,0,,toga_pdf
+United Airlines,UA/UAL,B763,65,<4hr flight,toga_pdf+fandom
+United Airlines,UA/UAL,B763,60,>4hr flight,toga_pdf+fandom
+United Airlines,UA/UAL,B772,85,<4hr flight,toga_pdf+fandom
+United Airlines,UA/UAL,B772,80,>4hr flight,toga_pdf+fandom
+UPS,-,MD11,0,,toga_pdf
 Virgin America,-,A32X,30-35,,toga_pdf
 Virgin Atlantic,-,A333,32,,toga_pdf
-Virgin Atlantic,VS/VIR,A340-300,30,,fandom
-Virgin Atlantic,VS/VIR,A340-600,40,,fandom
-Virgin Atlantic,-,A343,30,,toga_pdf
-Virgin Atlantic,-,A346,40,,toga_pdf
+Virgin Atlantic,VS/VIR,A343,30,,toga_pdf+fandom
+Virgin Atlantic,VS/VIR,A346,40,,toga_pdf+fandom
 Virgin Atlantic,-,B744,73-93,eastbound 75 / westbound 90,toga_pdf
 Virgin Atlantic,VS/VIR,B747,150,,fandom
 Virgin Atlantic,-,B747 CL,150,FMS equipped,toga_pdf
 Virgin Atlantic,VS/VIR,B747-400,73-93,,fandom
 Virgin Blue,-,General,12-25,,toga_pdf
 Volotea,-,B717,15,,toga_pdf
-Western Global,-,MD-11,80,,toga_pdf
+Western Global,-,MD11,80,,toga_pdf
 Westjet,-,B737 NG,20-25,,toga_pdf
-WestJet,WS/WJA,B737NG,20-25,,fandom
+WestJet,WS/WJA,B737 NG,20-25,,fandom
 Wizzair,-,A320,15,w & w/o SL,toga_pdf
 Wizzair,W6/WZZ,A320/A320SL,15,,fandom
 XL Airways FR,-,A330,40,M0.81 max CRZ; 300kt/M0.81 CLB/DES instead of CI,toga_pdf
