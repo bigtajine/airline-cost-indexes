@@ -82,7 +82,9 @@ async function main() {
     const c = line.split(',');
     return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3] };
   });
-  rows.sort((a, b) => a.airline.localeCompare(b.airline) || a.aircraft.localeCompare(b.aircraft));
+  rows.sort((a, b) => a.airline.localeCompare(b.airline)
+    || (b.aircraft === 'General') - (a.aircraft === 'General')
+    || a.aircraft.localeCompare(b.aircraft));
 
   const airlineSelect = document.getElementById('airline-select');
   const tbody = document.getElementById('results');
