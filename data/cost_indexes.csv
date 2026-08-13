@@ -1,4 +1,6 @@
 airline,code,aircraft,cost_index
+ASL Airlines Belgium,-,B737 NG & CL,10
+ASL Airlines Belgium,-,B744,35
 Aegean Airlines,-,A319/A320,20
 Aegean Airlines,A3/AEE,A320,20
 Aegean Airlines,A3/AEE,A321,25
@@ -24,30 +26,28 @@ Air Berlin,AB/BER,A319,3/6
 Air Berlin,AB/BER,A320,8
 Air Berlin,AB/BER,A321,7/8
 Air Berlin,AB/BER,A332,80
-Air Berlin,AB/BER,General,30
-Air Berlin,-,B737 NG,8
 Air Berlin,AB/BER,B737,8
+Air Berlin,-,B737 NG,8
 Air Berlin,AB/BER,B738,8
+Air Berlin,AB/BER,General,30
 Air Canada,AC/ACA,B767,100
 Air France,AF/AFR,A320,0/17
-Air France,AF/AFR,delayed longhaul,135
-Air France,AF/AFR,delayed shorthaul,250
 Air France,-,La navette,150(250)
 Air France,AF/AFR,Long haul,50(100-500)/45
 Air France,AF/AFR,Short/medium haul,35/10(99-250)
+Air France,AF/AFR,delayed longhaul,135
+Air France,AF/AFR,delayed shorthaul,250
 Air Malta,-,B737,25
 Air New Zealand,-,B767,45
 Air Tran,-,General,30
 Alaska Airlines,-,General,15-30
-American Airlines,AA/AAL,A319/A320/A321,27/22
-American Airlines,AA/AAL,B738,35/30
-American Airlines,AA/AAL,B752,80/75
-American Airlines,AA/AAL,B763,65/60
-American Airlines,-,B772,85/80
-American Airlines,-,B77W,90/85
-American Airlines,-,MD80,24/21
-ASL Airlines Belgium,-,B737 NG & CL,10
-ASL Airlines Belgium,-,B744,35
+American Airlines,AA/AAL,A319/A320/A321,22/27
+American Airlines,AA/AAL,B738,30/35
+American Airlines,AA/AAL,B752,75/80
+American Airlines,AA/AAL,B763,60/65
+American Airlines,-,B772,80/85
+American Airlines,-,B77W,85/90
+American Airlines,-,MD80,21/24
 Atlas Air,-,B748F,64-74
 Austrian,-,General,35
 British Airways,BA/BAW,A318,15/30
@@ -56,7 +56,6 @@ British Airways,-,A319/A320,15
 British Airways,BA/BAW,A320,20
 British Airways,BA/BAW,A321,20
 British Airways,BA/BAW,A388,90/120
-British Airways,-,General,0
 British Airways,-,B737 CL,28
 British Airways,BA/BAW,B744,53 or 0/90
 British Airways,-,B757 & B767,40
@@ -64,7 +63,8 @@ British Airways,BA/BAW,B763,40
 British Airways,BA/BAW,B772,57 or 0
 British Airways,-,B777,100
 British Airways,BA/BAW,B77W,57 or 0
-British Airways,BA/BAW,B787,70 or 0/25
+British Airways,BA/BAW,B787,25/70 or 0
+British Airways,-,General,0
 British Midlands,-,General,40
 Cathay Pacific,-,B744,80
 Cebu Pacific,-,A319/A320/A321,10
@@ -79,21 +79,21 @@ Condor,-,B767,30
 Delta Airlines,-,B737,13
 Delta Airlines,-,B744,100
 Delta Airlines,-,B757,55
-Delta Airlines,-,B762,81/54/243
-Delta Airlines,-,B763,94/63/377/113/75
-Delta Airlines,-,B764,107/71
+Delta Airlines,-,B762,54/81/243
+Delta Airlines,-,B763,63/75/94/113/377
+Delta Airlines,-,B764,71/107
 EasyJet,U2/EZY,A319,10
 EasyJet,U2/EZY/EZS,A319/A320,12
 EasyJet,U2/EZY,A320,9
 EasyJet,U2/EZY,A321,9/23
-Egyptair,MS/MSR,A320,23
-Egyptair,MS/MSR,A321,25
-Egyptair,MS/MSR,A332/A333,35
-Egyptair,-,A330,35
-Egyptair,MS/MSR,B735,18
-Egyptair,MS/MSR,B738,22
-Egyptair,MS/MSR,B772,37
-Egyptair,MS/MSR,B77W,44
+EgyptAir,MS/MSR,A320,23
+EgyptAir,MS/MSR,A321,25
+EgyptAir,-,A330,35
+EgyptAir,MS/MSR,A332/A333,35
+EgyptAir,MS/MSR,B735,18
+EgyptAir,MS/MSR,B738,22
+EgyptAir,MS/MSR,B772,37
+EgyptAir,MS/MSR,B77W,44
 El Al,-,B737,15-30
 El Al,-,B747,39
 El Al,-,B757,20-40
@@ -104,7 +104,7 @@ Emirates,EK/UAE,A332,26
 Emirates,EK/UAE,A343,24
 Emirates,EK/UAE,A345,28
 Emirates,EK/UAE,A388,50
-Emirates,EK/UAE,B772,36/34
+Emirates,EK/UAE,B772,34/36
 Emirates,EK/UAE,B77L/B77F,35
 Emirates,EK/UAE,B77W,36/37
 Etihad Airways,EY/ETD,A319,18
@@ -112,16 +112,16 @@ Etihad Airways,EY/ETD,A320,16/18
 Etihad Airways,EY/ETD,A321,15
 Etihad Airways,EY/ETD,A332,23/25
 Etihad Airways,EY/ETD,A333,26
-Etihad Airways,EY/ETD,A388,50
-Etihad Airways,EY/ETD,B77L,41
-Etihad Airways,EY/ETD,B77F,44
-Etihad Airways,EY/ETD,B77W,43/45
-Etihad Airways,EY/ETD,B789,25
 Etihad Airways,EY/ETD,A345,32
 Etihad Airways,EY/ETD,A346,32
+Etihad Airways,EY/ETD,A388,50
+Etihad Airways,EY/ETD,B77F,44
+Etihad Airways,EY/ETD,B77L,41
+Etihad Airways,EY/ETD,B77W,43/45
+Etihad Airways,EY/ETD,B789,25
 Eurowings,-,A319/A320/A321,11
 Fedex,-,MD11,200
-Fly Dubai,-,B737,32/12
+Fly Dubai,-,B737,12/32
 FlyGlobespan,-,B737,14
 FlyGlobespan,-,B738,13
 FlyNiki,-,General,50
@@ -139,41 +139,40 @@ Jet2,-,B733,5-8
 Jet2,-,B738,7-9
 Jet2,-,B752,10-17
 JetBlue,-,General,35
-Kingfisher,-,A319/A320/A321,18
 KLM,KL/KLM,A330,60/150/300
-KLM,KL/KLM,B737,30/15
-KLM,KL/KLM,B747,150/300/50
-KLM,KL/KLM,B777 & MD11,50/100/10
-KLM,KL/KLM,F70/F100,30/15
+KLM,KL/KLM,B737,15/30
+KLM,KL/KLM,B747,50/150/300
+KLM,KL/KLM,B777 & MD11,10/50/100
+KLM,KL/KLM,F70/F100,15/30
+Kingfisher,-,A319/A320/A321,18
 Lufthansa,LH/DLH,A306,35
 Lufthansa,-,A319/A320/A321,30
 Lufthansa,-,A330/A340,70-90
 Lufthansa,-,A388,60
 Lufthansa,LH/DLH,Airbus,25
 Lufthansa,LH/DLH,B733,25
-Lufthansa,-,B744 & B748,70
 Lufthansa,LH/DLH,B744,70
-Lufthansa Cargo,LH/GEC,General,80/50
+Lufthansa,-,B744 & B748,70
 Lufthansa Cargo,-,B77F,80
+Lufthansa Cargo,LH/GEC,General,50/80
 Lufthansa Cargo,-,MD11,30
 Luxair,LG/LGL,B737,10
 Luxair,LG/LGL,B738,8
 Nordavia,-,B735,27
 Nordstar Airlines,-,B737,30
+Norwegian Air Shuttle,DY/NAX,B733,30
 Norwegian Air Shuttle,-,B737 CL,20
 Norwegian Air Shuttle,-,B737 NG,15/40/80
-Norwegian Air Shuttle,DY/NAX,B733,30
 Norwegian Air Shuttle,DY/NAX,B738,15
 Norwegian Air Shuttle,-,B787,36
 Norwegian Air Shuttle,DY/NAX,B788,36
-Nouvelair,-,A320,28
-Nouvelair Tunisie,BJ/LBT,A320,38
+Nouvelair,BJ/LBT,A320,28/38
 Novair,1I/NVR,A321,4
 PAL,-,B77W,0/100
-PIA,-,B777,180/LRC 310/0.84
+PIA,-,B777,LRC 310/0.84/180
 Qantas,-,B744,50-100
-Qantas,-,General,40/20
-Qatar Airways,QR/QTR,A319CJ,9/8
+Qantas,-,General,20/40
+Qatar Airways,QR/QTR,A319CJ,8/9
 Qatar Airways,QR/QTR,A320,10
 Qatar Airways,QR/QTR,A321,11
 Qatar Airways,QR/QTR,A332,15
@@ -182,29 +181,29 @@ Qatar Airways,QR/QTR,A346,21
 Qatar Airways,-,A350,30
 Qatar Airways,QR/QTR,A359,30
 Qatar Airways,QR/QTR,A388,160
-Qatar Airways,-,B77L/B77F,120/110
-Qatar Airways,QR/QTR,B77L,120/110
 Qatar Airways,QR/QTR,B77F,120
+Qatar Airways,QR/QTR,B77L,110/120
+Qatar Airways,-,B77L/B77F,110/120
 Qatar Airways,QR/QTR,B77W,120
-Qatar Airways,-,B787,110/25
-Qatar Airways,QR/QTR,B788,110/25
+Qatar Airways,-,B787,25/110
+Qatar Airways,QR/QTR,B788,25/110
 Royal Air Maroc,-,B737,34
-Royal Air Maroc,AT/RAM,B738,29/24
+Royal Air Maroc,AT/RAM,B738,24/29
 Royal Air Maroc,-,B763,39
 Royal Air Maroc,-,B787,42
 Royal Air Maroc,AT/RAM,B788,42
-Ryanair,FR/RYR,General,6
 Ryanair,FR/RYR,B737,6
 Ryanair,-,B738,6
+Ryanair,FR/RYR,General,6
 S7,-,General,30
-SAS,SK/SAS,A319/A320/A321,60/6
-SAS,SK/SAS,A330/A340,50
-SAS,SK/SAS,General,45-50
-SAS,SK/SAS,B737,6
-SAS,-,B737 CL,40-45
-SAS,-,B737 NG,5-8
-SAS,SK/SAS,CRJ9,89/9
-SAS,-,MD80,10-45
+Scandinavian Airlines,SK/SAS,A319/A320/A321,6/60
+Scandinavian Airlines,SK/SAS,A330/A340,50
+Scandinavian Airlines,SK/SAS,B737,6
+Scandinavian Airlines,-,B737 CL,40-45
+Scandinavian Airlines,-,B737 NG,5-8
+Scandinavian Airlines,SK/SAS,CRJ9,9/89
+Scandinavian Airlines,SK/SAS,General,45-50
+Scandinavian Airlines,-,MD80,10-45
 Singapore Airlines,-,B747 & B777,150
 Skyexpress Russia,-,B737 CL,28/32
 SmallPlanet,-,General,15
@@ -216,13 +215,23 @@ SunExpress,-,General,2-4
 Swiss Airlines,-,A319/A320/A321,10/20
 Swiss Airlines,-,A330/A340,30/150
 Swiss International Air Lines,LX/SWR,A320/A321,10/20
-Swiss International Air Lines,LX/SWR,A332/A343,150/30
+Swiss International Air Lines,LX/SWR,A332/A343,30/150
 TAM Linhas Aereas,JJ/TAM,A319,19
 TAM Linhas Aereas,JJ/TAM,A320,26
 TAM Linhas Aereas,JJ/TAM,A321,25
 TAM Linhas Aereas,JJ/TAM,A332,26
 TAM Linhas Aereas,JJ/TAM,B763,34
 TAM Linhas Aereas,JJ/TAM,B77W,38
+TUI Airways,BY/TOM,A320,13
+TUI Airways,BY/TOM,A321,17
+TUI Airways,BY/TOM,B733,10
+TUI Airways,BY/TOM,B737,15
+TUI Airways,BY/TOM,B738,9
+TUI Airways,BY/TOM,B752,10
+TUI Airways,BY/TOM,B757,23
+TUI Airways,BY/TOM,B763,11/19
+TUI Airways,BY/TOM,B767,25
+TUI Airways,BY/TOM,B787,45
 Thomas Cook Airlines Belgium,HQ/TCW,A320,10
 Thomas Cook Airlines Scandinavia,DK/VKG,A321,21
 Thomas Cook Airlines Scandinavia,DK/VKG,A332,40
@@ -241,18 +250,8 @@ Thomas Cook UK,-,A332,27
 Thomas Cook UK,-,B752,28
 Thomas Cook UK,-,B753,29
 Thomas Cook UK,-,B763,27
-Thomson Airways,BY/TOM,A320,13
-Thomson Airways,BY/TOM,A321,17
-Thomson Airways,BY/TOM,B733,10
-Thomson Airways,BY/TOM,B738,9
-Thomson Airways,BY/TOM,B752,10
-Thomson Airways,BY/TOM,B763,19/11
 Transavia,-,B737,36(300-350)
 Tui,-,General,15
-TUI Airways UK,BY/TOM,B737,15
-TUI Airways UK,BY/TOM,B757,23
-TUI Airways UK,BY/TOM,B767,25
-TUI Airways UK,BY/TOM,B787,45
 Tui BEL (JetairFly),-,General,13-14
 Tui UK (Thomson Airways),-,A320,13
 Tui UK (Thomson Airways),-,A321,17
@@ -264,19 +263,19 @@ Tui UK (Thomson Airways),-,B787,21
 Tunisair,TU/TAR,A320,17
 Tunisair,TU/TAR,B736,13
 Turkish Airlines,-,B77W,26
+UPS,-,MD11,0
 Ukraine International,-,B737 NG & CL,11-14
 Ukraine International Airlines,PS/AUI,B737 NG,17-27
 Ukraine International Airlines,PS/AUI,B767,50-60
 Ukraine International Airlines,PS/AUI,B777,140
 Ukraine International Airlines,PS/AUI,E190,20-30
-United Airlines,UA/UAL,A319/A320/A321,27/22
-United Airlines,-,B737 NG & CL,35/30
-United Airlines,UA/UAL,B733/B735,45/30
-United Airlines,UA/UAL,B744,90/85
-United Airlines,UA/UAL,B752,80/75
-United Airlines,UA/UAL,B763,65/60
-United Airlines,UA/UAL,B772,85/80
-UPS,-,MD11,0
+United Airlines,UA/UAL,A319/A320/A321,22/27
+United Airlines,UA/UAL,B733/B735,30/45
+United Airlines,-,B737 NG & CL,30/35
+United Airlines,UA/UAL,B744,85/90
+United Airlines,UA/UAL,B752,75/80
+United Airlines,UA/UAL,B763,60/65
+United Airlines,UA/UAL,B772,80/85
 Virgin America,-,A319/A320/A321,30-35
 Virgin Atlantic,-,A333,32
 Virgin Atlantic,VS/VIR,A343,30
@@ -286,8 +285,8 @@ Virgin Atlantic,VS/VIR,B747,150
 Virgin Atlantic,-,B747 CL,150
 Virgin Blue,-,General,12-25
 Volotea,-,B717,15
+WestJet,WS/WJA,B737 NG,20-25
 Western Global,-,MD11,80
 Westjet,-,B737 NG,20-25
-WestJet,WS/WJA,B737 NG,20-25
-Wizzair,W6/WZZ,A320,15
+Wizz Air,W6/WZZ,A320,15
 XL Airways FR,-,A330,40
