@@ -11,11 +11,19 @@ Live dropdown lookup (GitHub Pages): https://bigtajine.github.io/airline-cost-in
 
 ## Data
 
-- [`data/cost_indexes.csv`](data/cost_indexes.csv) — airline, code, aircraft, CI value, notes, source
+- [`data/cost_indexes.csv`](data/cost_indexes.csv) — airline, code, aircraft (ICAO type designator), CI value, notes
 
-## Sources
+Aircraft types follow the [ICAO type designator list](https://en.wikipedia.org/wiki/List_of_aircraft_type_designators)
+(`B738` = 737-800, `A332` = A330-200, etc.) so the same type from different
+sources always lines up under one row instead of duplicating.
 
-- https://www.togaprojects.com/cost-index-database (Cost Index Database v1.3.5 PDF — full ~85-airline dataset)
-- https://costindex-index.fandom.com/wiki/Different_Cost_indexes_from_ALOT_of_airlines (+ per-airline wiki pages)
+CI value formats:
+- `20` — single value
+- `10-20` — range
+- `9/8` — discrete alternatives (e.g. outbound/inbound)
+- `50(250)` — base value, delayed-ops value in parentheses
 
-Rows where both sources agree are merged (`source: fandom+toga_pdf`). Rows where they genuinely differ (e.g. flight-length-dependent CI) are kept separate.
+Compiled from the TOGA Projects Cost Index Database PDF and the
+costindex-index fandom wiki. Where the two sources agreed, they were merged
+into one row; where they genuinely conflicted (e.g. flight-length-dependent
+CI), both values are kept as separate rows.

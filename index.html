@@ -5,29 +5,40 @@
 <title>Airline Cost Index Lookup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  :root { color-scheme: light dark; --bg: #fff; --fg: #1a1a1a; --muted: #666; --border: #ddd; --head-bg: #f3f3f3; --link: #06c; }
+  :root { color-scheme: light dark; --bg: #fff; --fg: #1a1a1a; --muted: #767676; --border: #e5e5e5; --row-hover: #f7f7f7; --accent: #2563eb; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #16181c; --fg: #e8e8e8; --muted: #9a9a9a; --border: #333; --head-bg: #22252a; --link: #6cf; }
+    :root { --bg: #131417; --fg: #ececec; --muted: #8a8a8a; --border: #2a2b30; --row-hover: #1c1d21; --accent: #6ea8fe; }
   }
   * { box-sizing: border-box; }
-  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; color: var(--fg); background: var(--bg); }
-  h1 { font-size: 1.5rem; margin-bottom: .3rem; }
-  #meta { color: var(--muted); font-size: .88rem; margin-bottom: 1.2rem; }
-  select { width: 100%; padding: .65rem; font-size: 1rem; margin-bottom: 1.2rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--fg); }
+  body {
+    font-family: -apple-system, system-ui, sans-serif;
+    max-width: 640px; margin: 4rem auto; padding: 0 1.25rem;
+    color: var(--fg); background: var(--bg);
+  }
+  h1 { font-size: 1.3rem; font-weight: 600; margin: 0 0 1.5rem; }
+  select {
+    width: 100%; padding: .75rem .9rem; font-size: 1rem; margin-bottom: 1.5rem;
+    border: 1px solid var(--border); border-radius: 10px;
+    background: var(--bg); color: var(--fg); appearance: none;
+  }
+  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   table { width: 100%; border-collapse: collapse; }
-  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--border); font-size: .92rem; }
-  th { background: var(--head-bg); font-weight: 600; }
-  tbody tr:hover { background: var(--head-bg); }
-  #empty { color: var(--muted); font-size: .9rem; padding: .5rem 0; display: none; }
-  a { color: var(--link); }
+  th {
+    text-align: left; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--muted); padding: 0 .5rem .5rem;
+  }
+  td { padding: .6rem .5rem; border-top: 1px solid var(--border); font-size: .95rem; }
+  tbody tr:hover { background: var(--row-hover); }
+  td.ci { font-variant-numeric: tabular-nums; font-weight: 600; }
+  td.notes { color: var(--muted); font-size: .85rem; }
+  #empty { color: var(--muted); font-size: .9rem; padding: .5rem; display: none; }
 </style>
 </head>
 <body>
 <h1>Airline Cost Index Lookup</h1>
-<div id="meta">Pick an airline, get its Cost Index values per aircraft. Source: <a href="data/cost_indexes.csv">cost_indexes.csv</a></div>
 <select id="airline"><option value="">Select an airline…</option></select>
 <div id="empty">No data for this airline.</div>
-<table id="results"><thead><tr><th>Aircraft</th><th>CI</th></tr></thead><tbody></tbody></table>
+<table id="results"><thead><tr><th>Aircraft</th><th>CI</th><th>Notes</th></tr></thead><tbody></tbody></table>
 
 <script>
 async function main() {
@@ -35,7 +46,7 @@ async function main() {
   const text = await res.text();
   const rows = text.trim().split('\n').slice(1).map(line => {
     const c = line.split(',');
-    return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3], notes: c[4], source: c[5] };
+    return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3], notes: c[4] || '' };
   });
 
   const airlines = [...new Set(rows.map(r => r.airline))].sort();
@@ -55,11 +66,15 @@ async function main() {
     empty.style.display = select.value && !matches.length ? 'block' : 'none';
     matches.forEach(r => {
       const tr = document.createElement('tr');
-      for (const val of [r.aircraft, r.cost_index]) {
-        const td = document.createElement('td');
-        td.textContent = val;
-        tr.appendChild(td);
-      }
+      const aircraft = document.createElement('td');
+      aircraft.textContent = r.aircraft;
+      const ci = document.createElement('td');
+      ci.className = 'ci';
+      ci.textContent = r.cost_index;
+      const notes = document.createElement('td');
+      notes.className = 'notes';
+      notes.textContent = r.notes;
+      tr.append(aircraft, ci, notes);
       tbody.appendChild(tr);
     });
   });
