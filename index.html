@@ -5,9 +5,9 @@
 <title>Airline Cost Index Lookup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  :root { color-scheme: light dark; --bg: #fff; --fg: #1a1a1a; --muted: #767676; --border: #e5e5e5; --row-hover: #f7f7f7; --accent: #2563eb; }
+  :root { color-scheme: light dark; --bg: #fff; --fg: #1a1a1a; --muted: #767676; --border: #e5e5e5; --row-hover: #f7f7f7; --accent: #2563eb; --general-bg: #eef2ff; --general-fg: #2f4bb0; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #131417; --fg: #ececec; --muted: #8a8a8a; --border: #2a2b30; --row-hover: #1c1d21; --accent: #6ea8fe; }
+    :root { --bg: #131417; --fg: #ececec; --muted: #8a8a8a; --border: #2a2b30; --row-hover: #1c1d21; --accent: #6ea8fe; --general-bg: #1a2033; --general-fg: #9db3ff; }
   }
   * { box-sizing: border-box; }
   body {
@@ -31,6 +31,12 @@
   tbody tr:hover { background: var(--row-hover); }
   td.ci { font-variant-numeric: tabular-nums; font-weight: 600; }
   #empty { color: var(--muted); font-size: .9rem; padding: .5rem; display: none; }
+  #results { display: none; }
+  .tag {
+    display: inline-block; font-size: .68rem; font-weight: 650; letter-spacing: .03em;
+    text-transform: uppercase; padding: .12rem .4rem; border-radius: 5px;
+    background: var(--general-bg); color: var(--general-fg);
+  }
 </style>
 </head>
 <body>
@@ -58,16 +64,25 @@ async function main() {
     select.appendChild(opt);
   }
 
-  const tbody = document.querySelector('#results tbody');
+  const table = document.getElementById('results');
+  const tbody = table.querySelector('tbody');
   const empty = document.getElementById('empty');
   select.addEventListener('change', () => {
     tbody.innerHTML = '';
     const matches = rows.filter(r => r.airline === select.value);
     empty.style.display = select.value && !matches.length ? 'block' : 'none';
+    table.style.display = matches.length ? 'table' : 'none';
     matches.forEach(r => {
       const tr = document.createElement('tr');
       const aircraft = document.createElement('td');
-      aircraft.textContent = r.aircraft;
+      if (r.aircraft === 'General') {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = 'General';
+        aircraft.appendChild(tag);
+      } else {
+        aircraft.textContent = r.aircraft;
+      }
       const ci = document.createElement('td');
       ci.className = 'ci';
       ci.textContent = r.cost_index;
