@@ -7,93 +7,70 @@
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #fafafa; --surface: #fff; --fg: #16171a; --muted: #6b6f76;
-    --border: #e6e6e9; --row-hover: #f4f4f6; --accent: #3b6ef6;
+    --bg: #ffffff; --fg: #131417; --muted: #70747c; --border: #eaeaec;
+    --head-bg: #fafafa; --row-hover: #f5f6f8; --accent: #2f5fe0;
+    --general-bg: #eef2ff; --general-fg: #2f4bb0;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0d0e11; --surface: #17181c; --fg: #f0f0f1; --muted: #8d9099;
-      --border: #26272c; --row-hover: #1f2024; --accent: #7aa2ff;
+      --bg: #0c0d10; --fg: #eceef0; --muted: #8b8f98; --border: #202226;
+      --head-bg: #131418; --row-hover: #17181c; --accent: #7fa2ff;
+      --general-bg: #1a2033; --general-fg: #9db3ff;
     }
   }
   * { box-sizing: border-box; }
   body {
     font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
-    margin: 0; min-height: 100vh; background: var(--bg); color: var(--fg);
-    display: flex; justify-content: center; padding: 3rem 1.25rem;
+    margin: 0; background: var(--bg); color: var(--fg);
   }
-  main { width: 100%; max-width: 560px; }
-  h1 {
-    font-size: 1.35rem; font-weight: 650; letter-spacing: -.01em;
-    margin: 0 0 .3rem;
+  header {
+    position: sticky; top: 0; z-index: 5; background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 1.5rem 1rem;
   }
-  p.sub { color: var(--muted); font-size: .88rem; margin: 0 0 1.5rem; }
-  .search-box { position: relative; margin-bottom: 1.25rem; }
+  h1 { font-size: 1.15rem; font-weight: 650; letter-spacing: -.01em; margin: 0 0 .8rem; }
+  .search-row { display: flex; gap: .6rem; max-width: 720px; }
   input[type="search"] {
-    width: 100%; padding: .8rem 1rem; font-size: 1rem;
-    border: 1px solid var(--border); border-radius: 12px;
-    background: var(--surface); color: var(--fg);
+    flex: 1; padding: .6rem .8rem; font-size: .95rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg); color: var(--fg);
   }
   input[type="search"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-  #airline-list {
-    position: absolute; left: 0; right: 0; top: calc(100% + 6px);
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    max-height: 260px; overflow-y: auto; z-index: 10; display: none;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  }
-  #airline-list.open { display: block; }
-  #airline-list button {
-    display: block; width: 100%; text-align: left; padding: .6rem 1rem;
-    background: none; border: none; color: var(--fg); font-size: .92rem; cursor: pointer;
-  }
-  #airline-list button:hover, #airline-list button.active { background: var(--row-hover); }
-  .card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-    overflow: hidden; display: none;
-  }
-  .card.open { display: block; }
-  .card + .card { margin-top: 1.25rem; }
-  #general-card:not(.open) + .card { margin-top: 0; }
-  .card-head {
-    padding: .9rem 1.1rem; font-weight: 600; font-size: .95rem;
-    border-bottom: 1px solid var(--border);
-  }
+  #count { color: var(--muted); font-size: .82rem; white-space: nowrap; align-self: center; }
+  main { max-width: 720px; margin: 0 auto; padding: 0 1.5rem 3rem; }
   table { width: 100%; border-collapse: collapse; }
-  th {
+  thead th {
+    position: sticky; top: 72px; background: var(--head-bg);
     text-align: left; font-size: .68rem; font-weight: 650; letter-spacing: .05em;
-    text-transform: uppercase; color: var(--muted); padding: .7rem 1.1rem .4rem;
+    text-transform: uppercase; color: var(--muted);
+    padding: .5rem .6rem; border-bottom: 1px solid var(--border);
   }
-  td { padding: .55rem 1.1rem; font-size: .92rem; border-top: 1px solid var(--border); }
   tbody tr:hover { background: var(--row-hover); }
-  td.ci { font-variant-numeric: tabular-nums; font-weight: 600; }
-  #empty { color: var(--muted); font-size: .88rem; padding: .5rem .2rem; display: none; }
+  td { padding: .5rem .6rem; font-size: .9rem; border-bottom: 1px solid var(--border); }
+  td.airline { font-weight: 500; }
+  td.ci { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+  .tag {
+    display: inline-block; font-size: .68rem; font-weight: 650; letter-spacing: .03em;
+    text-transform: uppercase; padding: .12rem .4rem; border-radius: 5px;
+    background: var(--general-bg); color: var(--general-fg); margin-left: .4rem;
+  }
+  #empty { color: var(--muted); font-size: .9rem; padding: 2rem 0; text-align: center; display: none; }
 </style>
 </head>
 <body>
-<main>
+<header>
   <h1>Airline Cost Index Lookup</h1>
-  <p class="sub">Search an airline to see its Cost Index per aircraft type.</p>
-
-  <div class="search-box">
-    <input type="search" id="search" placeholder="Search airline…" autocomplete="off">
-    <div id="airline-list"></div>
+  <div class="search-row">
+    <input type="search" id="search" placeholder="Filter by airline or aircraft…" autocomplete="off">
+    <span id="count"></span>
   </div>
-
-  <div id="empty">No data for this airline.</div>
-  <div class="card" id="general-card">
-    <div class="card-head">General</div>
-    <table>
-      <thead><tr><th>Aircraft</th><th>CI</th></tr></thead>
-      <tbody id="general-results"></tbody>
-    </table>
-  </div>
-  <div class="card" id="card">
-    <div class="card-head" id="card-head"></div>
-    <table>
-      <thead><tr><th>Aircraft</th><th>CI</th></tr></thead>
-      <tbody id="results"></tbody>
-    </table>
-  </div>
+</header>
+<main>
+  <div id="empty">No matches.</div>
+  <table>
+    <thead><tr><th>Airline</th><th>Aircraft</th><th>CI</th></tr></thead>
+    <tbody id="results"></tbody>
+  </table>
 </main>
 
 <script>
@@ -104,93 +81,55 @@ async function main() {
     const c = line.split(',');
     return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3] };
   });
-
-  const airlines = [...new Set(rows.map(r => r.airline))].sort();
+  rows.sort((a, b) => a.airline.localeCompare(b.airline) || a.aircraft.localeCompare(b.aircraft));
 
   const search = document.getElementById('search');
-  const list = document.getElementById('airline-list');
-  const card = document.getElementById('card');
-  const cardHead = document.getElementById('card-head');
   const tbody = document.getElementById('results');
-  const generalCard = document.getElementById('general-card');
-  const generalTbody = document.getElementById('general-results');
   const empty = document.getElementById('empty');
+  const count = document.getElementById('count');
 
-  function fillRows(tbody, list) {
+  function render(filter) {
+    const q = filter.trim().toLowerCase();
+    const matches = q
+      ? rows.filter(r => r.airline.toLowerCase().includes(q) || r.aircraft.toLowerCase().includes(q))
+      : rows;
+
     tbody.innerHTML = '';
-    list.forEach(r => {
+    let lastAirline = null;
+    matches.forEach(r => {
       const tr = document.createElement('tr');
+
+      const airline = document.createElement('td');
+      airline.className = 'airline';
+      if (r.airline !== lastAirline) {
+        airline.textContent = r.airline;
+        lastAirline = r.airline;
+      }
+
       const aircraft = document.createElement('td');
-      aircraft.textContent = r.aircraft;
+      aircraft.textContent = r.aircraft === 'General' ? '' : r.aircraft;
+      if (r.aircraft === 'General') {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = 'General';
+        aircraft.appendChild(tag);
+      }
+
       const ci = document.createElement('td');
       ci.className = 'ci';
       ci.textContent = r.cost_index;
-      tr.append(aircraft, ci);
+
+      tr.append(airline, aircraft, ci);
       tbody.appendChild(tr);
     });
-  }
-
-  function renderList(filter) {
-    const q = filter.trim().toLowerCase();
-    const matches = q ? airlines.filter(a => a.toLowerCase().includes(q)) : airlines;
-    list.innerHTML = '';
-    matches.forEach(a => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.textContent = a;
-      btn.addEventListener('click', () => selectAirline(a));
-      list.appendChild(btn);
-    });
-    list.classList.toggle('open', matches.length > 0);
-  }
-
-  function moveActive(dir) {
-    const items = [...list.querySelectorAll('button')];
-    if (!items.length) return;
-    let i = items.findIndex(b => b.classList.contains('active'));
-    items[i]?.classList.remove('active');
-    i = (i + dir + items.length) % items.length;
-    items[i].classList.add('active');
-    items[i].scrollIntoView({ block: 'nearest' });
-  }
-
-  function selectAirline(airline) {
-    search.value = airline;
-    list.classList.remove('open');
-    const matches = rows.filter(r => r.airline === airline);
-    const general = matches.filter(r => r.aircraft === 'General');
-    const rest = matches.filter(r => r.aircraft !== 'General');
 
     empty.style.display = matches.length ? 'none' : 'block';
-    cardHead.textContent = airline;
-
-    generalCard.classList.toggle('open', general.length > 0);
-    fillRows(generalTbody, general);
-
-    card.classList.toggle('open', rest.length > 0);
-    fillRows(tbody, rest);
+    const airlineCount = new Set(matches.map(r => r.airline)).size;
+    count.textContent = q ? `${matches.length} rows, ${airlineCount} airlines` : `${rows.length} rows, ${airlineCount} airlines`;
   }
 
-  search.addEventListener('input', () => {
-    card.classList.remove('open');
-    generalCard.classList.remove('open');
-    empty.style.display = 'none';
-    renderList(search.value);
-  });
-  search.addEventListener('focus', () => renderList(search.value));
-  search.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); moveActive(1); }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); moveActive(-1); }
-    else if (e.key === 'Enter') {
-      const active = list.querySelector('button.active') || list.querySelector('button');
-      if (active) { e.preventDefault(); selectAirline(active.textContent); }
-    } else if (e.key === 'Escape') {
-      list.classList.remove('open');
-    }
-  });
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search-box')) list.classList.remove('open');
-  });
+  search.addEventListener('input', () => render(search.value));
+  render('');
 }
 main();
 </script>
