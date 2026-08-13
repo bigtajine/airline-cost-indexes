@@ -134,7 +134,7 @@ async function main() {
     const q = filter.trim().toLowerCase();
     const matches = q ? airlines.filter(a => a.toLowerCase().includes(q)) : airlines;
     list.innerHTML = '';
-    matches.slice(0, 50).forEach(a => {
+    matches.forEach(a => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.textContent = a;
@@ -142,6 +142,16 @@ async function main() {
       list.appendChild(btn);
     });
     list.classList.toggle('open', matches.length > 0);
+  }
+
+  function moveActive(dir) {
+    const items = [...list.querySelectorAll('button')];
+    if (!items.length) return;
+    let i = items.findIndex(b => b.classList.contains('active'));
+    items[i]?.classList.remove('active');
+    i = (i + dir + items.length) % items.length;
+    items[i].classList.add('active');
+    items[i].scrollIntoView({ block: 'nearest' });
   }
 
   function selectAirline(airline) {
@@ -168,6 +178,16 @@ async function main() {
     renderList(search.value);
   });
   search.addEventListener('focus', () => renderList(search.value));
+  search.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); moveActive(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); moveActive(-1); }
+    else if (e.key === 'Enter') {
+      const active = list.querySelector('button.active') || list.querySelector('button');
+      if (active) { e.preventDefault(); selectAirline(active.textContent); }
+    } else if (e.key === 'Escape') {
+      list.classList.remove('open');
+    }
+  });
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-box')) list.classList.remove('open');
   });
