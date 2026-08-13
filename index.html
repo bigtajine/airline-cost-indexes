@@ -35,9 +35,8 @@
     border: 1px solid var(--border); border-radius: 8px;
     background: var(--bg); color: var(--fg);
   }
-  input[type="search"] { flex: 1; }
-  select { max-width: 220px; }
-  input[type="search"]:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  select { flex: 1; max-width: 320px; }
+  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   #count { color: var(--muted); font-size: .82rem; white-space: nowrap; align-self: center; }
   main { max-width: 720px; margin: 0 auto; padding: 0 1.5rem 3rem; }
   table { width: 100%; border-collapse: collapse; }
@@ -63,8 +62,7 @@
 <header>
   <h1>Airline Cost Index Lookup</h1>
   <div class="search-row">
-    <select id="airline-select"><option value="">All airlines</option></select>
-    <input type="search" id="search" placeholder="Filter by airline or aircraft…" autocomplete="off">
+    <select id="airline-select"><option value="">Select an airline…</option></select>
     <span id="count"></span>
   </div>
 </header>
@@ -86,7 +84,6 @@ async function main() {
   });
   rows.sort((a, b) => a.airline.localeCompare(b.airline) || a.aircraft.localeCompare(b.aircraft));
 
-  const search = document.getElementById('search');
   const airlineSelect = document.getElementById('airline-select');
   const tbody = document.getElementById('results');
   const empty = document.getElementById('empty');
@@ -101,11 +98,8 @@ async function main() {
   }
 
   function render() {
-    const q = search.value.trim().toLowerCase();
     const selected = airlineSelect.value;
-    let matches = rows;
-    if (selected) matches = matches.filter(r => r.airline === selected);
-    if (q) matches = matches.filter(r => r.airline.toLowerCase().includes(q) || r.aircraft.toLowerCase().includes(q));
+    const matches = selected ? rows.filter(r => r.airline === selected) : [];
 
     tbody.innerHTML = '';
     let lastAirline = null;
@@ -136,12 +130,10 @@ async function main() {
       tbody.appendChild(tr);
     });
 
-    empty.style.display = matches.length ? 'none' : 'block';
-    const airlineCount = new Set(matches.map(r => r.airline)).size;
-    count.textContent = `${matches.length} rows, ${airlineCount} airlines`;
+    empty.style.display = selected && !matches.length ? 'block' : 'none';
+    count.textContent = matches.length ? `${matches.length} rows` : '';
   }
 
-  search.addEventListener('input', render);
   airlineSelect.addEventListener('change', render);
   render();
 }
