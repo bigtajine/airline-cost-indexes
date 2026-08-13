@@ -52,6 +52,8 @@
     overflow: hidden; display: none;
   }
   .card.open { display: block; }
+  .card + .card { margin-top: 1.25rem; }
+  #general-card:not(.open) + .card { margin-top: 0; }
   .card-head {
     padding: .9rem 1.1rem; font-weight: 600; font-size: .95rem;
     border-bottom: 1px solid var(--border);
@@ -78,6 +80,13 @@
   </div>
 
   <div id="empty">No data for this airline.</div>
+  <div class="card" id="general-card">
+    <div class="card-head">General</div>
+    <table>
+      <thead><tr><th>Aircraft</th><th>CI</th></tr></thead>
+      <tbody id="general-results"></tbody>
+    </table>
+  </div>
   <div class="card" id="card">
     <div class="card-head" id="card-head"></div>
     <table>
@@ -103,7 +112,23 @@ async function main() {
   const card = document.getElementById('card');
   const cardHead = document.getElementById('card-head');
   const tbody = document.getElementById('results');
+  const generalCard = document.getElementById('general-card');
+  const generalTbody = document.getElementById('general-results');
   const empty = document.getElementById('empty');
+
+  function fillRows(tbody, list) {
+    tbody.innerHTML = '';
+    list.forEach(r => {
+      const tr = document.createElement('tr');
+      const aircraft = document.createElement('td');
+      aircraft.textContent = r.aircraft;
+      const ci = document.createElement('td');
+      ci.className = 'ci';
+      ci.textContent = r.cost_index;
+      tr.append(aircraft, ci);
+      tbody.appendChild(tr);
+    });
+  }
 
   function renderList(filter) {
     const q = filter.trim().toLowerCase();
@@ -123,24 +148,22 @@ async function main() {
     search.value = airline;
     list.classList.remove('open');
     const matches = rows.filter(r => r.airline === airline);
+    const general = matches.filter(r => r.aircraft === 'General');
+    const rest = matches.filter(r => r.aircraft !== 'General');
+
     empty.style.display = matches.length ? 'none' : 'block';
-    card.classList.toggle('open', matches.length > 0);
     cardHead.textContent = airline;
-    tbody.innerHTML = '';
-    matches.forEach(r => {
-      const tr = document.createElement('tr');
-      const aircraft = document.createElement('td');
-      aircraft.textContent = r.aircraft;
-      const ci = document.createElement('td');
-      ci.className = 'ci';
-      ci.textContent = r.cost_index;
-      tr.append(aircraft, ci);
-      tbody.appendChild(tr);
-    });
+
+    generalCard.classList.toggle('open', general.length > 0);
+    fillRows(generalTbody, general);
+
+    card.classList.toggle('open', rest.length > 0);
+    fillRows(tbody, rest);
   }
 
   search.addEventListener('input', () => {
     card.classList.remove('open');
+    generalCard.classList.remove('open');
     empty.style.display = 'none';
     renderList(search.value);
   });
