@@ -57,13 +57,13 @@ British Airways,BA/BAW,A320,20
 British Airways,BA/BAW,A321,20
 British Airways,BA/BAW,A388,90/120
 British Airways,-,B737 CL,28
-British Airways,BA/BAW,B744,53 or 0/90
+British Airways,BA/BAW,B744,0/53/90
 British Airways,-,B757 & B767,40
 British Airways,BA/BAW,B763,40
-British Airways,BA/BAW,B772,57 or 0
+British Airways,BA/BAW,B772,0/57
 British Airways,-,B777,100
-British Airways,BA/BAW,B77W,57 or 0
-British Airways,BA/BAW,B787,25/70 or 0
+British Airways,BA/BAW,B77W,0/57
+British Airways,BA/BAW,B787,0/25/70
 British Airways,-,General,0
 British Midlands,-,General,40
 Cathay Pacific,-,B744,80
