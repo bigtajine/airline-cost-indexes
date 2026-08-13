@@ -1,0 +1,196 @@
+airline,code,aircraft,cost_index,notes,source
+Ryanair,FR/RYR,B737,6,,fandom
+SAS,SK/SAS,B737,6,,fandom
+SAS,SK/SAS,CRJ9,89,,fandom
+SAS,SK/SAS,A319/320/321,60,,fandom
+SAS,SK/SAS,A330/340,50,,fandom
+SAS,SK/SAS,all,45-50,legacy page value,fandom
+Norwegian Air Shuttle,DY/NAX,B737-800,15,80 delay only,fandom
+Norwegian Air Shuttle,DY/NAX,B737-300,30,,fandom
+Norwegian Air Shuttle,DY/NAX,B787-8,36,,fandom
+Southwest Airlines,WN/SWA,B737NG,40,all revenue flights; 2024/2025 real-world OPS,fandom
+Southwest Airlines,WN/SWA,B737 MAX,30,all revenue flights,fandom
+British Airways,BA/BAW,A318,15,,fandom
+British Airways,BA/BAW,A319,20,,fandom
+British Airways,BA/BAW,A320,20,,fandom
+British Airways,BA/BAW,A321,20,,fandom
+British Airways,BA/BAW,B744,53 or 0,0 usable East Coast USA-UK,fandom
+British Airways,BA/BAW,B763,40,,fandom
+British Airways,BA/BAW,B772,57 or 0,0 usable East Coast USA-UK,fandom
+British Airways,BA/BAW,B77W,57 or 0,0 usable East Coast USA-UK,fandom
+British Airways,BA/BAW,B787,70 or 0,0 usable East Coast USA-UK,fandom
+British Airways,BA/BAW,A380,90,,fandom
+Ukraine International Airlines,PS/AUI,B737NG,17-27,CI 100 morning flights from Kazakhstan,fandom
+Ukraine International Airlines,PS/AUI,E190,20-30,,fandom
+Ukraine International Airlines,PS/AUI,B767,50-60,,fandom
+Ukraine International Airlines,PS/AUI,B777,140,,fandom
+TAM Linhas Aereas,JJ/TAM,A319,19,,fandom
+TAM Linhas Aereas,JJ/TAM,A320,26,,fandom
+TAM Linhas Aereas,JJ/TAM,A321,25,,fandom
+TAM Linhas Aereas,JJ/TAM,B763,34,,fandom
+TAM Linhas Aereas,JJ/TAM,B77W,38,,fandom
+TAM Linhas Aereas,JJ/TAM,A332,26,,fandom
+EasyJet,U2/EZY/EZS,A319/A320/A320SL,12,fandom wiki page value,fandom
+EasyJet,U2/EZY,A319,10,legacy page value,fandom
+EasyJet,U2/EZY,A320,9,legacy page value,fandom
+EasyJet,U2/EZY,A321,9,legacy page value,fandom
+Wizzair,W6/WZZ,A320/A320SL,15,,fandom
+Aegean Airlines,A3/AEE,A320,20,,fandom
+Aegean Airlines,A3/AEE,A321,25,,fandom
+Royal Air Maroc,AT/RAM,B738,29,,fandom
+Royal Air Maroc,AT/RAM,B788,42,,fandom
+Nouvelair Tunisie,BJ/LBT,A320,38,,fandom
+Tunisair,TU/TAR,A320,17,,fandom
+Tunisair,TU/TAR,B736,13,,fandom
+Luxair,LG/LGL,B737,10,,fandom
+Luxair,LG/LGL,B738,8,,fandom
+Icelandair,FI/ICE,B757-300,18,,fandom
+Icelandair,FI/ICE,B757-200,16,,fandom
+TUI Airways UK,BY/TOM,B787,45,,fandom
+TUI Airways UK,BY/TOM,B737,15,,fandom
+TUI Airways UK,BY/TOM,B757,23,,fandom
+TUI Airways UK,BY/TOM,B767,25,,fandom
+Air Berlin,AB/BER,A320/NLY,8,OE-xxx registered planes,fandom
+Air Berlin,AB/BER,A321/NLY,7,OE-xxx registered planes,fandom
+Air Berlin,AB/BER,A319/BHP,3,HB-xxx registered planes,fandom
+Air Berlin,AB/BER,A319/BER,6,D-xxxx registered planes,fandom
+Air Berlin,AB/BER,A320/BER,8,D-xxxx registered planes,fandom
+Air Berlin,AB/BER,A321/BER,8,D-xxxx registered planes,fandom
+Air Berlin,AB/BER,B737-700,8,,fandom
+Air Berlin,AB/BER,B737-800,8,,fandom
+Air Berlin,AB/BER,A330-200,80,,fandom
+Air Berlin,AB/BER,all,30,legacy page value,fandom
+Emirates,EK/UAE,A330-200,26,,fandom
+Emirates,EK/UAE,A340-300,24,,fandom
+Emirates,EK/UAE,A340-500,28,,fandom
+Emirates,EK/UAE,A380-800,50,,fandom
+Emirates,EK/UAE,B777-300ER,36,,fandom
+Emirates,EK/UAE,B777-300ERD,37,ICAO B773D reg A6EMN/EMM/EMO/EMP/EMR/EMS/EMT/EMU/EMV/EMX/EMW,fandom
+Emirates,EK/UAE,B777-200LR/F,35,,fandom
+Emirates,EK/UAE,B777-200ER,36,,fandom
+Emirates,EK/UAE,B777-200,34,short haul only; ICAO B772 reg A6EMI/EMH/EML/EMK/EMJ,fandom
+Qatar Airways,QR/QTR,A319CJ,9/8,9 outbound DOH / 8 inbound DOH,fandom
+Qatar Airways,QR/QTR,A320,10,,fandom
+Qatar Airways,QR/QTR,A321,11,,fandom
+Qatar Airways,QR/QTR,A330-200,15,,fandom
+Qatar Airways,QR/QTR,A330-300,15,,fandom
+Qatar Airways,QR/QTR,A330-200F,15,,fandom
+Qatar Airways,QR/QTR,A340-600,21,,fandom
+Qatar Airways,QR/QTR,A350-900,30,,fandom
+Qatar Airways,QR/QTR,A380-800,160,,fandom
+Qatar Airways,QR/QTR,B777-200LR,120/110,120 outbound DOH / 110 inbound DOH,fandom
+Qatar Airways,QR/QTR,B777-200LRF,120,,fandom
+Qatar Airways,QR/QTR,B777-300ER,120,,fandom
+Qatar Airways,QR/QTR,B787-800,110/25,110 outbound DOH / 25 inbound DOH,fandom
+Egyptair,MS/MSR,B737-500,18,,fandom
+Egyptair,MS/MSR,B737-800,22,,fandom
+Egyptair,MS/MSR,A320,23,,fandom
+Egyptair,MS/MSR,A321,25,,fandom
+Egyptair,MS/MSR,A330-200/300,35,,fandom
+Egyptair,MS/MSR,B772,37,,fandom
+Egyptair,MS/MSR,B77W,44,,fandom
+Thomas Cook Airlines Belgium,HQ/TCW,A320,10,,fandom
+Thomas Cook Airlines UK,MT/TCX,A321,13,,fandom
+Thomas Cook Airlines UK,MT/TCX,A332,27,,fandom
+Thomas Cook Airlines UK,MT/TCX,B752,28,,fandom
+Thomas Cook Airlines UK,MT/TCX,B753,29,,fandom
+Thomas Cook Airlines UK,MT/TCX,B763,27,,fandom
+Thomas Cook Airlines Scandinavia,DK/VKG,A321,21,,fandom
+Thomas Cook Airlines Scandinavia,DK/VKG,A332,40,,fandom
+Thomas Cook Airlines Scandinavia,DK/VKG,A333,39,,fandom
+Condor,DE/CFG,A320,26,,fandom
+Condor,DE/CFG,A321,33,,fandom
+Condor,DE/CFG,B753,30,,fandom
+Condor,DE/CFG,B763,30,,fandom
+Novair,1I/NVR,A321,4,,fandom
+Etihad Airways,EY/ETD,A319,18,,fandom
+Etihad Airways,EY/ETD,A320,16,,fandom
+Etihad Airways,EY/ETD,A320SL,18,,fandom
+Etihad Airways,EY/ETD,A321SL,15,,fandom
+Etihad Airways,EY/ETD,A332,23,,fandom
+Etihad Airways,EY/ETD,A332F,25,,fandom
+Etihad Airways,EY/ETD,A333,26,,fandom
+Etihad Airways,EY/ETD,A345,32,,fandom
+Etihad Airways,EY/ETD,A346,32,,fandom
+Etihad Airways,EY/ETD,B772LR,41,,fandom
+Etihad Airways,EY/ETD,B772LRF,44,,fandom
+Etihad Airways,EY/ETD,B77W,43,reg A6-JAx series,fandom
+Etihad Airways,EY/ETD,B77W,45,reg A6-ETx series,fandom
+Etihad Airways,EY/ETD,B789,25,,fandom
+Etihad Airways,EY/ETD,A388,50,,fandom
+Aerolineas Argentinas,AR/ARG,B737,25,15 when flying EZE-BOG/BOG-EZE,fandom
+Aerolineas Argentinas,AR/ARG,B738/B38M,20,,fandom
+Aerolineas Argentinas,AR/ARG,A332,30,,fandom
+Air Berlin,AB/BER,all,30,scribd db,scribd
+Air Canada,AC/ACA,B767,100,,scribd
+Aegean Airlines,A3/AEE,A319/20,20,scribd db,scribd
+Aegean Airlines,A3/AEE,A321,25,scribd db,scribd
+Aer Lingus,EI/EIN,A32X,5,,scribd
+Aeroflot,SU/AFL,A32X,10-20,,scribd
+Aeroflot,SU/AFL,B767-300,60,,scribd
+Aerolineas Argentinas,AR/ARG,B737,25,scribd db,scribd
+Air Baltic,BT/BTI,general,28,,scribd
+Air Baltic,BT/BTI,B757,50,,scribd
+Air France,AF/AFR,A320 domestic,0/17,climb/cruise,fandom
+Air France,AF/AFR,short/medium haul,35,,fandom
+Air France,AF/AFR,longhaul,45,,fandom
+Air France,AF/AFR,delayed shorthaul,250,,fandom
+Air France,AF/AFR,delayed longhaul,135,,fandom
+American Airlines,AA/AAL,MD-80,24,>4hr flight,fandom
+American Airlines,AA/AAL,A319/A32B,27,>4hr flight,fandom
+American Airlines,AA/AAL,B737-800W,35,>4hr flight,fandom
+American Airlines,AA/AAL,B757-200W,80,>4hr flight,fandom
+American Airlines,AA/AAL,B767-300ER,65,>4hr flight,fandom
+American Airlines,AA/AAL,B777-200ER,85,>4hr flight,fandom
+American Airlines,AA/AAL,B777-300ER,90,>4hr flight,fandom
+American Airlines,AA/AAL,MD-80,21,<4hr flight,fandom
+American Airlines,AA/AAL,A319/A32B,22,<4hr flight,fandom
+American Airlines,AA/AAL,B737-800W,30,<4hr flight,fandom
+American Airlines,AA/AAL,B757-200W,75,<4hr flight,fandom
+American Airlines,AA/AAL,B767-300ER,60,<4hr flight,fandom
+American Airlines,AA/AAL,B777-200ER,80,<4hr flight,fandom
+American Airlines,AA/AAL,B777-300ER,85,<4hr flight,fandom
+Swiss International Air Lines,LX/SWR,A32S,10,FL290 and below,fandom
+Swiss International Air Lines,LX/SWR,A32S,20,above FL290,fandom
+Swiss International Air Lines,LX/SWR,A330-200/A340-300 LRC,30,,fandom
+Swiss International Air Lines,LX/SWR,A330-200/A340-300,30,M.082 cruise CI 30 climb/descend/cruise to FL280,fandom
+Swiss International Air Lines,LX/SWR,A330-200/A340-300,150,M.083 cruise CI 150 climb/descend/cruise to FL290,fandom
+Thomson Airways,BY/TOM,A320,13,,fandom
+Thomson Airways,BY/TOM,A321,17,,fandom
+Thomson Airways,BY/TOM,B737-300,10,,fandom
+Thomson Airways,BY/TOM,B737-800,9,,fandom
+Thomson Airways,BY/TOM,B757-200,10,,fandom
+Thomson Airways,BY/TOM,B767-300 long haul,19,,fandom
+Thomson Airways,BY/TOM,B767-300 short haul,11,,fandom
+United Airlines,UA/UAL,A319/A320,27,<4hr flight,fandom
+United Airlines,UA/UAL,B737-300/500,45,<4hr flight,fandom
+United Airlines,UA/UAL,B747-400,90,<4hr flight,fandom
+United Airlines,UA/UAL,B757-200,80,<4hr flight,fandom
+United Airlines,UA/UAL,B767-300,65,<4hr flight,fandom
+United Airlines,UA/UAL,B777-200,85,<4hr flight,fandom
+United Airlines,UA/UAL,A319/A320,22,>4hr flight,fandom
+United Airlines,UA/UAL,B737-300/500,30,>4hr flight,fandom
+United Airlines,UA/UAL,B747-400,85,>4hr flight,fandom
+United Airlines,UA/UAL,B757-200,75,>4hr flight,fandom
+United Airlines,UA/UAL,B767-300,60,>4hr flight,fandom
+United Airlines,UA/UAL,B777-200,80,>4hr flight,fandom
+Virgin Atlantic,VS/VIR,A340-300,30,,fandom
+Virgin Atlantic,VS/VIR,A340-600,40,,fandom
+Virgin Atlantic,VS/VIR,B747-400,73-93,,fandom
+Virgin Atlantic,VS/VIR,B747,150,,fandom
+WestJet,WS/WJA,B737NG,20-25,,fandom
+KLM,KL/KLM,F70/100,30/15,climb/cruise,fandom
+KLM,KL/KLM,B737,30/15,climb/cruise,fandom
+KLM,KL/KLM,A330,60/150(300)/30,climb/cruise/descend,fandom
+KLM,KL/KLM,MD11,50/100/20,climb/cruise/descend,fandom
+KLM,KL/KLM,B777,50/100/20,climb/cruise/descend,fandom
+KLM,KL/KLM,B747,150/300/50,climb/cruise/descend,fandom
+Lufthansa,LH/DLH,Airbus (general),25,,fandom
+Lufthansa,LH/DLH,B747-400,70,,fandom
+Lufthansa,LH/DLH,A300-600,35,,fandom
+Lufthansa,LH/DLH,B737-300,25,,fandom
+Lufthansa Cargo,LH/GEC,all,80,,fandom
+Ryanair,FR/RYR,all,6,legacy page value,fandom
+A320,-,A320,20,generic aircraft-level default,toga
+A321,-,A321,25,generic aircraft-level default,toga
+A319,-,A319,20,generic aircraft-level default,toga
