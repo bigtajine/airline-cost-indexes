@@ -5,14 +5,17 @@ values by airline and aircraft type, compiled from community-maintained sources.
 Cost Index is a numeric OPS parameter (roughly 0-200) balancing fuel burn vs. time
 cost; values here are real-world/virtual-airline reference figures, not creative content.
 
+## Lookup
+
+Live dropdown lookup (GitHub Pages): https://bigtajine.github.io/airline-cost-indexes/
+
 ## Data
 
-- [`data/cost_indexes.csv`](data/cost_indexes.csv) — airline, code, aircraft, CI value, notes, source
-- [`data/skyteam_fleet_types.csv`](data/skyteam_fleet_types.csv) — SkyTeam Virtual fleet aircraft-type counts (context/reference for aircraft type names)
+- [`data/cost_indexes.csv`](data/cost_indexes.csv) — airline, code, aircraft, CI value, notes, source (466 rows, sorted by airline/aircraft)
 
 ## Sources
 
-- https://www.togaprojects.com/cost-index-database
+- https://www.togaprojects.com/cost-index-database (Cost Index Database v1.3.5 PDF — full ~85-airline dataset)
 - https://costindex-index.fandom.com/wiki/Different_Cost_indexes_from_ALOT_of_airlines (+ per-airline wiki pages)
 - https://es.scribd.com/document/412889192/Airlines-Cost-Index-Database (partial — Scribd gates full-document text behind login/paywall)
 - https://www.scribd.com/document/493346746/Cost-Index-Database (metadata only — full content paywalled, not extracted)

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Airline Cost Index Lookup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 700px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+  h1 { font-size: 1.4rem; }
+  select { width: 100%; padding: .6rem; font-size: 1rem; margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #ddd; font-size: .92rem; }
+  th { background: #f3f3f3; }
+  #meta { color: #666; font-size: .85rem; margin-top: -.5rem; margin-bottom: 1rem; }
+  a { color: #06c; }
+</style>
+</head>
+<body>
+<h1>Airline Cost Index Lookup</h1>
+<div id="meta">Pick an airline, get its Cost Index values per aircraft. Source: <a href="data/cost_indexes.csv">cost_indexes.csv</a></div>
+<select id="airline"><option value="">Select an airline…</option></select>
+<table id="results"><thead><tr><th>Aircraft</th><th>CI</th><th>Notes</th><th>Source</th></tr></thead><tbody></tbody></table>
+
+<script>
+async function main() {
+  const res = await fetch('data/cost_indexes.csv');
+  const text = await res.text();
+  const rows = text.trim().split('\n').slice(1).map(line => {
+    const c = line.split(',');
+    return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3], notes: c[4], source: c[5] };
+  });
+
+  const airlines = [...new Set(rows.map(r => r.airline))].sort();
+  const select = document.getElementById('airline');
+  for (const a of airlines) {
+    const opt = document.createElement('option');
+    opt.value = a;
+    opt.textContent = a;
+    select.appendChild(opt);
+  }
+
+  const tbody = document.querySelector('#results tbody');
+  select.addEventListener('change', () => {
+    tbody.innerHTML = '';
+    rows.filter(r => r.airline === select.value).forEach(r => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${r.aircraft}</td><td>${r.cost_index}</td><td>${r.notes || ''}</td><td>${r.source}</td>`;
+      tbody.appendChild(tr);
+    });
+  });
+}
+main();
+</script>
+</body>
+</html>
