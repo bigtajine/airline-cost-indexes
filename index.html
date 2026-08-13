@@ -5,39 +5,87 @@
 <title>Airline Cost Index Lookup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  :root { color-scheme: light dark; --bg: #fff; --fg: #1a1a1a; --muted: #767676; --border: #e5e5e5; --row-hover: #f7f7f7; --accent: #2563eb; }
+  :root {
+    color-scheme: light dark;
+    --bg: #fafafa; --surface: #fff; --fg: #16171a; --muted: #6b6f76;
+    --border: #e6e6e9; --row-hover: #f4f4f6; --accent: #3b6ef6;
+  }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #131417; --fg: #ececec; --muted: #8a8a8a; --border: #2a2b30; --row-hover: #1c1d21; --accent: #6ea8fe; }
+    :root {
+      --bg: #0d0e11; --surface: #17181c; --fg: #f0f0f1; --muted: #8d9099;
+      --border: #26272c; --row-hover: #1f2024; --accent: #7aa2ff;
+    }
   }
   * { box-sizing: border-box; }
   body {
-    font-family: -apple-system, system-ui, sans-serif;
-    max-width: 640px; margin: 4rem auto; padding: 0 1.25rem;
-    color: var(--fg); background: var(--bg);
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--fg);
+    display: flex; justify-content: center; padding: 3rem 1.25rem;
   }
-  h1 { font-size: 1.3rem; font-weight: 600; margin: 0 0 1.5rem; }
-  select {
-    width: 100%; padding: .75rem .9rem; font-size: 1rem; margin-bottom: 1.5rem;
-    border: 1px solid var(--border); border-radius: 10px;
-    background: var(--bg); color: var(--fg); appearance: none;
+  main { width: 100%; max-width: 560px; }
+  h1 {
+    font-size: 1.35rem; font-weight: 650; letter-spacing: -.01em;
+    margin: 0 0 .3rem;
   }
-  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  p.sub { color: var(--muted); font-size: .88rem; margin: 0 0 1.5rem; }
+  .search-box { position: relative; margin-bottom: 1.25rem; }
+  input[type="search"] {
+    width: 100%; padding: .8rem 1rem; font-size: 1rem;
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface); color: var(--fg);
+  }
+  input[type="search"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  #airline-list {
+    position: absolute; left: 0; right: 0; top: calc(100% + 6px);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    max-height: 260px; overflow-y: auto; z-index: 10; display: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  }
+  #airline-list.open { display: block; }
+  #airline-list button {
+    display: block; width: 100%; text-align: left; padding: .6rem 1rem;
+    background: none; border: none; color: var(--fg); font-size: .92rem; cursor: pointer;
+  }
+  #airline-list button:hover, #airline-list button.active { background: var(--row-hover); }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; display: none;
+  }
+  .card.open { display: block; }
+  .card-head {
+    padding: .9rem 1.1rem; font-weight: 600; font-size: .95rem;
+    border-bottom: 1px solid var(--border);
+  }
   table { width: 100%; border-collapse: collapse; }
   th {
-    text-align: left; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
-    text-transform: uppercase; color: var(--muted); padding: 0 .5rem .5rem;
+    text-align: left; font-size: .68rem; font-weight: 650; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--muted); padding: .7rem 1.1rem .4rem;
   }
-  td { padding: .6rem .5rem; border-top: 1px solid var(--border); font-size: .95rem; }
+  td { padding: .55rem 1.1rem; font-size: .92rem; border-top: 1px solid var(--border); }
   tbody tr:hover { background: var(--row-hover); }
   td.ci { font-variant-numeric: tabular-nums; font-weight: 600; }
-  #empty { color: var(--muted); font-size: .9rem; padding: .5rem; display: none; }
+  #empty { color: var(--muted); font-size: .88rem; padding: .5rem .2rem; display: none; }
 </style>
 </head>
 <body>
-<h1>Airline Cost Index Lookup</h1>
-<select id="airline"><option value="">Select an airline…</option></select>
-<div id="empty">No data for this airline.</div>
-<table id="results"><thead><tr><th>Aircraft</th><th>CI</th></tr></thead><tbody></tbody></table>
+<main>
+  <h1>Airline Cost Index Lookup</h1>
+  <p class="sub">Search an airline to see its Cost Index per aircraft type.</p>
+
+  <div class="search-box">
+    <input type="search" id="search" placeholder="Search airline…" autocomplete="off">
+    <div id="airline-list"></div>
+  </div>
+
+  <div id="empty">No data for this airline.</div>
+  <div class="card" id="card">
+    <div class="card-head" id="card-head"></div>
+    <table>
+      <thead><tr><th>Aircraft</th><th>CI</th></tr></thead>
+      <tbody id="results"></tbody>
+    </table>
+  </div>
+</main>
 
 <script>
 async function main() {
@@ -49,20 +97,36 @@ async function main() {
   });
 
   const airlines = [...new Set(rows.map(r => r.airline))].sort();
-  const select = document.getElementById('airline');
-  for (const a of airlines) {
-    const opt = document.createElement('option');
-    opt.value = a;
-    opt.textContent = a;
-    select.appendChild(opt);
+
+  const search = document.getElementById('search');
+  const list = document.getElementById('airline-list');
+  const card = document.getElementById('card');
+  const cardHead = document.getElementById('card-head');
+  const tbody = document.getElementById('results');
+  const empty = document.getElementById('empty');
+
+  function renderList(filter) {
+    const q = filter.trim().toLowerCase();
+    const matches = q ? airlines.filter(a => a.toLowerCase().includes(q)) : airlines;
+    list.innerHTML = '';
+    matches.slice(0, 50).forEach(a => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = a;
+      btn.addEventListener('click', () => selectAirline(a));
+      list.appendChild(btn);
+    });
+    list.classList.toggle('open', matches.length > 0);
   }
 
-  const tbody = document.querySelector('#results tbody');
-  const empty = document.getElementById('empty');
-  select.addEventListener('change', () => {
+  function selectAirline(airline) {
+    search.value = airline;
+    list.classList.remove('open');
+    const matches = rows.filter(r => r.airline === airline);
+    empty.style.display = matches.length ? 'none' : 'block';
+    card.classList.toggle('open', matches.length > 0);
+    cardHead.textContent = airline;
     tbody.innerHTML = '';
-    const matches = rows.filter(r => r.airline === select.value);
-    empty.style.display = select.value && !matches.length ? 'block' : 'none';
     matches.forEach(r => {
       const tr = document.createElement('tr');
       const aircraft = document.createElement('td');
@@ -73,6 +137,16 @@ async function main() {
       tr.append(aircraft, ci);
       tbody.appendChild(tr);
     });
+  }
+
+  search.addEventListener('input', () => {
+    card.classList.remove('open');
+    empty.style.display = 'none';
+    renderList(search.value);
+  });
+  search.addEventListener('focus', () => renderList(search.value));
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-box')) list.classList.remove('open');
   });
 }
 main();

@@ -86,14 +86,14 @@ EasyJet,U2/EZY,A319,10
 EasyJet,U2/EZY/EZS,A319/A320,12
 EasyJet,U2/EZY,A320,9
 EasyJet,U2/EZY,A321,9/23
-EgyptAir,MS/MSR,A320,23
-EgyptAir,MS/MSR,A321,25
-EgyptAir,-,A330,35
-EgyptAir,MS/MSR,A332/A333,35
-EgyptAir,MS/MSR,B735,18
-EgyptAir,MS/MSR,B738,22
-EgyptAir,MS/MSR,B772,37
-EgyptAir,MS/MSR,B77W,44
+Egyptair,MS/MSR,A320,23
+Egyptair,MS/MSR,A321,25
+Egyptair,-,A330,35
+Egyptair,MS/MSR,A332/A333,35
+Egyptair,MS/MSR,B735,18
+Egyptair,MS/MSR,B738,22
+Egyptair,MS/MSR,B772,37
+Egyptair,MS/MSR,B77W,44
 El Al,-,B737,15-30
 El Al,-,B747,39
 El Al,-,B757,20-40
@@ -196,14 +196,14 @@ Ryanair,FR/RYR,B737,6
 Ryanair,-,B738,6
 Ryanair,FR/RYR,General,6
 S7,-,General,30
-Scandinavian Airlines,SK/SAS,A319/A320/A321,6/60
-Scandinavian Airlines,SK/SAS,A330/A340,50
-Scandinavian Airlines,SK/SAS,B737,6
-Scandinavian Airlines,-,B737 CL,40-45
-Scandinavian Airlines,-,B737 NG,5-8
-Scandinavian Airlines,SK/SAS,CRJ9,9/89
-Scandinavian Airlines,SK/SAS,General,45-50
-Scandinavian Airlines,-,MD80,10-45
+SAS,SK/SAS,A319/A320/A321,6/60
+SAS,SK/SAS,A330/A340,50
+SAS,SK/SAS,B737,6
+SAS,-,B737 CL,40-45
+SAS,-,B737 NG,5-8
+SAS,SK/SAS,CRJ9,9/89
+SAS,SK/SAS,General,45-50
+SAS,-,MD80,10-45
 Singapore Airlines,-,B747 & B777,150
 Skyexpress Russia,-,B737 CL,28/32
 SmallPlanet,-,General,15
@@ -216,12 +216,12 @@ Swiss Airlines,-,A319/A320/A321,10/20
 Swiss Airlines,-,A330/A340,30/150
 Swiss International Air Lines,LX/SWR,A320/A321,10/20
 Swiss International Air Lines,LX/SWR,A332/A343,30/150
-TAM Linhas Aereas,JJ/TAM,A319,19
-TAM Linhas Aereas,JJ/TAM,A320,26
-TAM Linhas Aereas,JJ/TAM,A321,25
-TAM Linhas Aereas,JJ/TAM,A332,26
-TAM Linhas Aereas,JJ/TAM,B763,34
-TAM Linhas Aereas,JJ/TAM,B77W,38
+LATAM Airlines Brasil,JJ/TAM,A319,19
+LATAM Airlines Brasil,JJ/TAM,A320,26
+LATAM Airlines Brasil,JJ/TAM,A321,25
+LATAM Airlines Brasil,JJ/TAM,A332,26
+LATAM Airlines Brasil,JJ/TAM,B763,34
+LATAM Airlines Brasil,JJ/TAM,B77W,38
 TUI Airways,BY/TOM,A320,13
 TUI Airways,BY/TOM,A321,17
 TUI Airways,BY/TOM,B733,10
