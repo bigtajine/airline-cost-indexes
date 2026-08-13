@@ -35,8 +35,8 @@ Air France,AF/AFR,A320,0/17
 Air France,AF/AFR,Delayed longhaul,135
 Air France,AF/AFR,Delayed shorthaul,250
 Air France,-,La navette,150(250)
-Air France,AF/AFR,Long haul,50(100-500)/45
-Air France,AF/AFR,Short/medium haul,35/10(99-250)
+Air France,AF/AFR,Long haul,50(100-500)
+Air France,AF/AFR,Short/medium haul,10(99-250)
 Air Malta,-,B737,25
 Air New Zealand,-,B767,45
 Air Tran,-,General,30
