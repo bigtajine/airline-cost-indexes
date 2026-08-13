@@ -11,17 +11,11 @@ Live dropdown lookup (GitHub Pages): https://bigtajine.github.io/airline-cost-in
 
 ## Data
 
-- [`data/cost_indexes.csv`](data/cost_indexes.csv) — airline, code, aircraft, CI value, notes, source (466 rows, sorted by airline/aircraft)
+- [`data/cost_indexes.csv`](data/cost_indexes.csv) — airline, code, aircraft, CI value, notes, source
 
 ## Sources
 
 - https://www.togaprojects.com/cost-index-database (Cost Index Database v1.3.5 PDF — full ~85-airline dataset)
 - https://costindex-index.fandom.com/wiki/Different_Cost_indexes_from_ALOT_of_airlines (+ per-airline wiki pages)
-- https://es.scribd.com/document/412889192/Airlines-Cost-Index-Database (partial — Scribd gates full-document text behind login/paywall)
-- https://www.scribd.com/document/493346746/Cost-Index-Database (metadata only — full content paywalled, not extracted)
-- https://skyteamvirtual.org/fleet/types
 
-## Notes
-
-- Scribd sources could only be partially retrieved (preview text); values marked `source: scribd` come from what was accessible without a paid/authenticated session.
-- Several entries have duplicate airline/aircraft rows across sources with differing values — both are kept with distinct `source` and `notes` so provenance is preserved instead of guessing which is authoritative.
+Rows where both sources agree are merged (`source: fandom+toga_pdf`). Rows where they genuinely differ (e.g. flight-length-dependent CI) are kept separate.
