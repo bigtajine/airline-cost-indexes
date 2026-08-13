@@ -30,7 +30,6 @@
   td { padding: .6rem .5rem; border-top: 1px solid var(--border); font-size: .95rem; }
   tbody tr:hover { background: var(--row-hover); }
   td.ci { font-variant-numeric: tabular-nums; font-weight: 600; }
-  td.notes { color: var(--muted); font-size: .85rem; }
   #empty { color: var(--muted); font-size: .9rem; padding: .5rem; display: none; }
 </style>
 </head>
@@ -38,7 +37,7 @@
 <h1>Airline Cost Index Lookup</h1>
 <select id="airline"><option value="">Select an airline…</option></select>
 <div id="empty">No data for this airline.</div>
-<table id="results"><thead><tr><th>Aircraft</th><th>CI</th><th>Notes</th></tr></thead><tbody></tbody></table>
+<table id="results"><thead><tr><th>Aircraft</th><th>CI</th></tr></thead><tbody></tbody></table>
 
 <script>
 async function main() {
@@ -46,7 +45,7 @@ async function main() {
   const text = await res.text();
   const rows = text.trim().split('\n').slice(1).map(line => {
     const c = line.split(',');
-    return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3], notes: c[4] || '' };
+    return { airline: c[0], code: c[1], aircraft: c[2], cost_index: c[3] };
   });
 
   const airlines = [...new Set(rows.map(r => r.airline))].sort();
@@ -71,10 +70,7 @@ async function main() {
       const ci = document.createElement('td');
       ci.className = 'ci';
       ci.textContent = r.cost_index;
-      const notes = document.createElement('td');
-      notes.className = 'notes';
-      notes.textContent = r.notes;
-      tr.append(aircraft, ci, notes);
+      tr.append(aircraft, ci);
       tbody.appendChild(tr);
     });
   });
